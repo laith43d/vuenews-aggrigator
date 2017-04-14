@@ -6,10 +6,10 @@
             <select class="form-control" @change="sourceChanged">
                 <option v-bind:value="source.id" v-for="source in sources">{{source.name}}</option>
             </select>
-        <div v-if="source">
-            <h6>{{source.description}}</h6>
-            <a v-bind:href="source.url" class="btn btn-primary" target="_blank">go to {{source.name}} website</a>
-        </div>
+            <div v-if="source">
+                <h6>{{source.description}}</h6>
+                <a v-bind:href="source.url" class="btn btn-primary" target="_blank">go to {{source.name}} website</a>
+            </div>
         </div>
     </div>
 </template>
@@ -29,10 +29,8 @@
         },
         methods: {
             sourceChanged: function (e) {
-                for (let i=0; i<this.sources.length; i++)
-                {
-                    if (this.sources[i].id == e.target.value)
-                    {
+                for (let i = 0; i < this.sources.length; i++) {
+                    if (this.sources[i].id == e.target.value) {
                         this.source = this.sources[i]
                     }
                 }
@@ -41,10 +39,13 @@
         },
         created: function () {
             this.$http.get('https://newsapi.org/v1/sources?language=en')
-                .then(response => {
-                    this.sources = response.data.sources;
-                    this.source = this.sources[0]
-                })
+                .then(response
+            =>
+            {
+                this.sources = response.data.sources;
+                this.source = this.sources[0]
+            }
+            )
         }
 
     }

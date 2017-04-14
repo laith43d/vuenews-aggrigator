@@ -26,7 +26,7 @@
     export default {
         name: 'newslist',
         data () {
-            return{
+            return {
                 articles: [],
             }
         },
@@ -52,10 +52,11 @@
 </script>
 
 <style scoped>
-.media-object {
-    width: 128px;
-    padding: 10px;
-}
+    .media-object {
+        width: 128px;
+        padding: 10px;
+    }
+
     .media {
         border-top: 1px solid lightgrey;
         padding-top: 10px;
