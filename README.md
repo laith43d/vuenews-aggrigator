@@ -1,6 +1,7 @@
 # vuenews
 
-> A Vue.js project
+> News Aggrigator - Testing Vue
+
 
 ## Build Setup
 
